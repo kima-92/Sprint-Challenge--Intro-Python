@@ -24,6 +24,14 @@ class City:
 #
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
+
+  with open("cities.csv", newline="") as csvfile:
+    cities_reader = csv.reader(csvfile, delimiter=" ", quotechar="|")
+    
+    for row in cities_reader:
+
+      print("| |".join(row))
+      
 cities = []
 
 def cityreader(cities=[]):
