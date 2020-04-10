@@ -25,38 +25,34 @@ class City:
 
 cities = []
 
-# This function, use the CSV module to read 'cities.csv
-# Each record should be imported into an instance
-# Return the list with all the cities instances
-
-# Note: the first line of the CSV is a header that describes the fields--this
-# should not be loaded into a City object.
 def cityreader(cities=[]):
-  # TODO Implement the functionality to read from the 'cities.csv' file
-  # For each city record, create a new City instance and add it to the 
-  # `cities` list
-
-    with open("cities.csv", newline="") as csvfile:
-      cities_reader = csv.reader(csvfile, delimiter=",")
-
-      count = 1
+  """ 
+  Read from the 'cities.csv' file
+  Create a new City instance  for each city
+  Add it to the `cities` list
+  """
+  
+  with open("cities.csv", newline="") as csvfile:
+    cities_reader = csv.reader(csvfile, delimiter=",")
+    
+    count = 1
+    
+    for row in cities_reader:
       
-      for row in cities_reader:
-
-        if count != 1:
-          name = row[0]
-          lat = float(row[3])
-          lon = float(row[4])
-
-          city = City(name, lat, lon)
-          cities.append(city)
-          print(f"\nappended: {city.name}\n")
-          #print("| |".join(row))
-
-        count += 1
-
+      if count != 1:
+        name = row[0]
+        lat = float(row[3])
+        lon = float(row[4])
+        
+        city = City(name, lat, lon)
+        cities.append(city)
+        print(f"\nappended: {city.name}\n")
+        #print("| |".join(row))
+        
+      count += 1
+        
     return cities
-
+        
 cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
