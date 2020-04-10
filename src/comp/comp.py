@@ -43,14 +43,19 @@ print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
 print("Ages plus 10:")
-d = []
+#d = [human:1 for human in humans for age in humans]
+#d = [age + 10 for human in humans for age in humans]
+d = [human.age + 10 for human in humans]
 print(d)
+
+
+
 
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
-e = []
-print(e)
+#e = [x]
+#print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
