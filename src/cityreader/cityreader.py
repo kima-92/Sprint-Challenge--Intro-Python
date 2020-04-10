@@ -49,7 +49,8 @@ def cityreader(cities=[]):
           lon = float(row[4])
 
           city = City(name, lat, lon)
-          print(f"\ncreated object for: {city.name}\n")
+          cities.append(city)
+          print(f"\nappended: {city.name}\n")
           #print("| |".join(row))
 
         count += 1
